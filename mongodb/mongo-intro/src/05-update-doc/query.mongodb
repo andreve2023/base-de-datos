@@ -1,0 +1,3 @@
+
+//Me hace una consulta que me trae todos los documentos de dicha coleccion
+db.products.find()

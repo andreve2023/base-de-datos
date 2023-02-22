@@ -1,0 +1,8 @@
+use("platzi_store")
+
+//$PUSH //funciona para agregar un elemnto al array del documento que cumpla dicha condicion
+db.inventory.updateOne({_id: 4}, {
+    $push: {
+        tags: "headphone"
+    }
+})

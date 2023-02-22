@@ -1,0 +1,17 @@
+//Con esta instruccion entro a una base de datos y si no esta la crea
+use("platzi_store")
+
+
+//Elimina todos los documentos de una coleecion
+db.products.drop()
+
+//Con esta instruccion entra a una coleccion
+// y si no esta la colleccion la crea y con el insertOne crea un documentos
+db.products.insertOne({
+    name: "Product 1",
+    price: 1200
+})
+db.products.insertOne({
+    name: "Product 2",
+    price: 2200
+})

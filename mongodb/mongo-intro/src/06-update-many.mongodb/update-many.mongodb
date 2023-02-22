@@ -1,0 +1,11 @@
+use("sample_training")
+
+//Actualiza varios documentos al mismo tiempo
+db.zips.updateMany(
+    {city: 'CLEVELAND'},
+    {
+        $inc: {
+            pop: 1000
+        }
+    }
+)

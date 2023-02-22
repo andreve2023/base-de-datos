@@ -1,0 +1,33 @@
+use("sample_training")
+
+//$SET
+//actualiza o grega atributos de forma masiva a los documentos que cumplan con cierta condision
+db.zips.updateMany(
+    {city: 'CLEVELAND'},
+    {
+        $set: {
+            myAttr: "hola"
+        }
+    }
+)
+
+//$RENAME
+//Renombra el nombre clave del atributo
+db.zips.updateMany(
+    {city: 'CLEVELAND'},
+    {
+        $rename: {
+            myAtri: "my_data"
+        }
+    }
+)
+
+$UNSET    //Elimina algun atributo de los documentos que cumplan cierta condision
+db.zips.updateMany(
+    {city: 'CLEVELAND'},
+    {
+        $unset: {
+            my_data: ""
+        }
+    }
+)

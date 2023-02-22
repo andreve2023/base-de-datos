@@ -1,0 +1,5 @@
+use("platzi_store")
+
+
+//compara dos atributos del documento
+db.monthlyBudget.find({ $expr: {$gte: ["$spent", "$budget"]}})

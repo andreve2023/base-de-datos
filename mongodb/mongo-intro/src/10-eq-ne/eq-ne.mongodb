@@ -1,0 +1,28 @@
+use("platzi_store")
+
+//$eq = igual
+//$ne = diferente
+
+//usando $eq viene implicito
+
+//de forma implicita
+db.inventory.find({qty: 20})
+
+//de forma explicita
+db.inventory.find({qty: {$eq: 20}})
+
+
+//es un consulta a un subdocumento de forma implicita
+db.inventory.find({
+    "item.name": "item ab"
+})
+
+//es un consulta a un subdocumento de forma explicita
+db.inventory.find({
+    "item.name": {$eq: "123"}
+})
+
+//le digo que me traiga todos los documentos diferentes de 20
+db.inventory.find({qty: {$ne: 20}})
+
+

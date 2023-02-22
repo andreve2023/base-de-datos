@@ -1,0 +1,28 @@
+//Con esta instruccion entro a una base de datos y si no esta la crea
+use("platzi_store")
+
+//Elimina todos los documentos de una coleecion
+db.products.drop()
+
+//Esta instrucion nos puede crear varios documentos dentro de una coleccion
+db.products.insertMany([
+    {
+        _id: 1,
+        name: "product 1",
+        price: 100
+    },
+    {
+        _id: 2,
+        name: "product 2",
+        price: 200
+    },
+    {
+        _id: 3,
+        name: "product 3",
+        price: 300
+    }
+],{
+     ordered: false // Esta instruccion me dice que sin importar si el id esta duplicado me va a crear
+                    // todos los documentos que no se repite el id
+ })
+

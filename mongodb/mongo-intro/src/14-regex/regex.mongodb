@@ -1,0 +1,6 @@
+//expresiones regulares
+db.inventory.find({"item.description": {$regex: /line/}})
+
+db.inventory.find({"item.description": {$regex: /line$/i}})
+
+db.inventory.find({"item.description": {$regex: /line$/im}})

@@ -1,0 +1,23 @@
+use("platzi_store")
+
+// usando(>) $gt && $gte(>=)
+
+mayores a 20 || mayor igaul a 25
+db.inventory.find({qty: {$gt:25}})
+db.inventory.find({qty: {$gte:25}})
+
+
+//usando $lt (<) && $lte (<=)
+menor que 25 || menor igual 25
+db.inventory.find({qty: {$lt:25}})
+db.inventory.find({qty: {$lte:25}})
+
+
+cumplen con las dos condicionales
+db.inventory.find({qty: {$gte: 25, $lte:30}})
+
+db.inventory.find(
+    {
+        "item.name": "item ab",
+        qty: {$gte: 25, $lte:30}}
+)

@@ -1,0 +1,14 @@
+use("platzi_store")
+
+//UPSERT en true si el documento NO existe lo crea nuevo y si existe el documento lo actualiza
+
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-04",
+}, {
+    $push: {
+        readings: 2323
+    }
+},{
+    upsert: true
+})

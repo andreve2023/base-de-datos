@@ -1,0 +1,43 @@
+//Con esta instruccion entro a una base de datos y si no esta la crea
+use("platzi_store")
+
+//ACTUALIZA $set
+db.products.updateOne(
+    //query
+    {_id: 2,},
+    //cambios con operadores
+    {
+        $set: {
+            //aqui van los cambios que queramos
+            name: "Otro product",
+            price: 500,
+            tags: ['A', 'B']
+        }
+    }
+)
+db.products.updateOne(
+    //query
+    {_id: ObjectId( "63f647bfd72d0040cb2a25ba")}, //Cuando mongo actualiza un documentos con id generado
+                                                 // por mongo ahi que pasarle el ObjectId
+    //cambios con operadores
+    {
+        $inc: {
+            //aqui van los cambios que queramos
+            price: 100,
+        }
+    }
+)
+
+
+// INCREMENTA $inc
+db.products.updateOne(
+    //query
+    {_id: 2,},
+    //cambios con operadores
+    {
+        $inc: {
+            //aqui van los cambios que queramos
+            price: 100,
+        }
+    }
+)
