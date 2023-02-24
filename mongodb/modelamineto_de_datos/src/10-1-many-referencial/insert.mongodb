@@ -1,0 +1,20 @@
+use("platzi_store")
+
+
+db.orders.insertOne({
+    user_id: ObjectId('63f802c81ac254038e61fc4c'),
+    date: '2022-10-25',
+    items: [
+        {
+            name: 'zapatos',
+            price: '250',
+            qty: 1
+        },
+        {
+            name: 'tenis',
+            price: '159',
+            qty: 2
+        }
+
+    ]
+})
